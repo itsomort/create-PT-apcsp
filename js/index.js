@@ -53,6 +53,13 @@ function initCheckbox(listItem) {
     return ret;
 }
 
+/**
+ * This function also has no parameters and no return values.
+ * This function sorts the dateList and todoList using the sortByList1(list1, list2) function.
+ * After sorting both of the lists and assigning them, it removes all of the elements from the mainList element.
+ * This gets rid of all of the elements, it then calls the addSortedItems() function.
+ */
+
 function sortItems() {
     //uses bubble sort to sort the todolist by sorting the datelist
     let sortedLists = sortByList1(dateList, todoList);
@@ -66,16 +73,28 @@ function sortItems() {
     addSortedItems();
 }
 
+/**
+ * This function has no parameters and no return values. 
+ * This function adds the sorted items from the two lists into the DOM.
+ */
+
 function addSortedItems() {
     /*
         i'd rather not comment on every single attribute of this function, but a summary of it
-        is that it makes a nesting system for each task that looks like that
+        is that it makes a nesting system for each task that looks like this.
         div 
         |   p
         |   | text contianing the task and due date
         |   div 
         |   |   p  
         |   |   | X button and done with task text
+
+        It replicates this structure for every task, making it consistent if there needs to be a modification to the system.
+        For ID's, I use some sort of indicator for what it is (example: div for the top level div, taskText for the 
+        text to say you are done, etc.) and then a number indicating its position in the list. For example, the first
+        task on the page would have the top level div ID be div0, because it is the first task.
+
+        It then goes and adds attributes for every element in the nested structure.
         
     */
     
