@@ -12,11 +12,10 @@ var dateList = [];
 
 function addElement() {
     //first it checks if either of the inputs are blank
-    if(document.getElementById("dueDate").value == "" || document.getElementById("textOnLabel").value == "") {
+    if (document.getElementById("dueDate").value == "" || document.getElementById("textOnLabel").value == "") {
         //and if so it alerts the user
         alert("Input is empty! Please enter something.");
-    }
-    else {
+    } else {
         /*
             little note: i used the JQuery library for this project as it simplifies a lot of the functions in 
             manipulating DOM elements, so rather than having to type out document.getElementById(""), 
@@ -31,13 +30,12 @@ function addElement() {
         //it appends the listItem to the right div according to whether it is late or not
 
         let date = new Date(document.getElementById("dueDate").value);
-        if(date > new Date()) {
+        if (date > new Date()) {
             $("#nonLateSection").append(listItem);
-        }
-        else {
+        } else {
             $("#lateSection").append(listItem);
         }
-        
+
         //it then sets both of the input fields to "", or just blank
         $("#textOnLabel").val(" ");
         $("#dueDate").val("");
@@ -54,7 +52,7 @@ function addElement() {
 function initCheckbox(listItem) {
     let ret = listItem;
     let date = document.getElementById("dueDate").value;
-    let dueDate = new Date(date); 
+    let dueDate = new Date(date);
     ret.textContent = `task: ${document.getElementById("textOnLabel").value}|| due date: ${getDate(dueDate.toISOString())}`;
     ret.className = "todoListElement";
     todoList.push(listItem);
@@ -77,11 +75,11 @@ function sortItems() {
     let lateList = document.getElementById("lateSection");
     let nonLateList = document.getElementById("nonLateSection");
     //keeps removing list children until 
-    while(lateList.lastElementChild != null) {
+    while (lateList.lastElementChild != null) {
         lateList.removeChild(lateList.lastElementChild);
     }
 
-    while(nonLateList.lastElementChild != null) {
+    while (nonLateList.lastElementChild != null) {
         nonLateList.removeChild(nonLateList.lastElementChild);
     }
     addSortedItems();
@@ -111,16 +109,15 @@ function addSortedItems() {
         It then goes and adds attributes for every element in the nested structure.
         
     */
-    
-    for(let k = 0; k < todoList.length; k++) {
+
+    for (let k = 0; k < todoList.length; k++) {
         todoList[k].id = `item${k}`
         //div for the entire task
         let appendTo = "#mainList";
-        if(dateList[k] > new Date()) {
+        if (dateList[k] > new Date()) {
             appendTo = "#nonLateSection";
             todoList[k].className = "";
-        }
-        else if(dateList[k] < new Date()) {
+        } else if (dateList[k] < new Date()) {
             appendTo = "#lateSection";
             todoList[k].className = "lateText";
         }
@@ -135,7 +132,7 @@ function addSortedItems() {
             .attr("id", `taskText${k}`)
             .addClass("taskText")
             .appendTo(`#div${k}`)
-            .on("click", function() {
+            .on("click", function () {
                 let numid = this.id.split("")[this.id.length - 1];
                 todoList.splice(numid, 1);
                 $(`#item${numid}`).remove();
@@ -151,10 +148,9 @@ function addSortedItems() {
             .wrapInner("<b />");
         //done with this task text
         $("<p />")
-        .attr("id", `label${k}`)
-        .appendTo($(`#taskText${k}`))
-        .addClass("itemLabel")
-        .text(" done with this task!");
+            .attr("id", `label${k}`)
+            .appendTo($(`#taskText${k}`))
+            .addClass("itemLabel")
+            .text(" done with this task!");
     }
 }
-

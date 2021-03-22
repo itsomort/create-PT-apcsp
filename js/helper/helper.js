@@ -12,16 +12,16 @@ function sortByList1(list1, list2) {
     var c1 = list1;
     var c2 = list2;
     var length = c1.length;
-    for(var i = 0; i < length-1; i++) {
-        for(var j = 0; j < length-i-1; j++) {
-            if(c1[j] > c1[j+1]) { 
+    for (var i = 0; i < length - 1; i++) {
+        for (var j = 0; j < length - i - 1; j++) {
+            if (c1[j] > c1[j + 1]) {
                 var temp = c1[j];
                 var tempt = c2[j];
-                c1[j] = c1[j+1];
-                c2[j] = c2[j+1];
-                c1[j+1] = temp;
-                c2[j+1] = tempt;
-            } 
+                c1[j] = c1[j + 1];
+                c2[j] = c2[j + 1];
+                c1[j + 1] = temp;
+                c2[j + 1] = tempt;
+            }
         }
     }
     var ret = [0, 0];
@@ -52,7 +52,7 @@ function getDate(date) {
 
 function getMonth(inMonth) {
     var month;
-    switch(inMonth) {
+    switch (inMonth) {
         case 1:
             month = "January";
             break;
