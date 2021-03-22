@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="node_modules/purecss/build/pure-min.css">
     <link id="styles" rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/extras/dropdown.css">
-    <link rel="stylesheet" href="css/themes/t2/t2.css"> <!-- this is a constant style in case the theme styling fails, also a default theme -->
+    <link rel="stylesheet" href="css/themes/standard.css"> <!-- this is a constant style in case the theme styling fails, also a default theme -->
     <link rel="stylesheet" href="css/themes/t2/t2.css" id="theme">
 </head>
 
@@ -21,7 +21,7 @@
     <script src="js/index.js"></script> <!-- main js file, has main functionality -->
 
     <!-- dropdown menu for themes -->
-
+<!--
     <div class="themeMenu">
         <button class="themeMenuButton pure-button">themes</button>
         <div class="dropdown-content">
@@ -30,7 +30,7 @@
             <a onclick="changeTheme(this)" id="t3">orange</a>
         </div>
     </div>
-
+-->
 
     <!-- main website -->
 
@@ -46,12 +46,14 @@
         <label for="dueDate" class="formLabel">due date:</label>
         <input type="date" id="dueDate" name="dueDate" class="formInput">
     </form>
-
     <!-- button to add the task -->
+    <h3 class="subheading">red and bold text means the item is late. finish it quick!</h3>
     <button onclick="addElement()" class="pure-button button" id="elementButton">add item</button>
-    
     <!-- div element the list gets appended to -->
-    <div id="mainList" class='todoListMain'></div>
+    <div id="mainList" class='todoListMain'>
+        <div id="lateSection"></div>
+        <div id="nonLateSection"></div>
+    </div>
 </body>
 
 </html>

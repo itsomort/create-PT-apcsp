@@ -9,6 +9,7 @@ var dateList = [];
  * and checking if they are empty.
  */
 
+
 function addElement() {
     //first it checks if either of the inputs are blank
     if(document.getElementById("dueDate").value == "" || document.getElementById("textOnLabel").value == "") {
@@ -27,8 +28,16 @@ function addElement() {
         let listItem = document.createElement("p");
         //it then puts the text in and assignments it a class name
         listItem = initCheckbox(listItem);
-        //it appends the listItem to the mainlist
-        $("#mainList").append(listItem); 
+        //it appends the listItem to the right div according to whether it is late or not
+
+        let date = new Date(document.getElementById("dueDate").value);
+        if(date > new Date()) {
+            $("#nonLateSection").append(listItem);
+        }
+        else {
+            $("#lateSection").append(listItem);
+        }
+        
         //it then sets both of the input fields to "", or just blank
         $("#textOnLabel").val(" ");
         $("#dueDate").val("");
@@ -65,10 +74,15 @@ function sortItems() {
     let sortedLists = sortByList1(dateList, todoList);
     dateList = sortedLists[0];
     todoList = sortedLists[1];
-    let mainList = document.getElementById("mainList");
+    let lateList = document.getElementById("lateSection");
+    let nonLateList = document.getElementById("nonLateSection");
     //keeps removing list children until 
-    while(mainList.lastElementChild != null) {
-        mainList.removeChild(mainList.lastElementChild);
+    while(lateList.lastElementChild != null) {
+        lateList.removeChild(lateList.lastElementChild);
+    }
+
+    while(nonLateList.lastElementChild != null) {
+        nonLateList.removeChild(nonLateList.lastElementChild);
     }
     addSortedItems();
 }
@@ -101,10 +115,20 @@ function addSortedItems() {
     for(let k = 0; k < todoList.length; k++) {
         todoList[k].id = `item${k}`
         //div for the entire task
+        let appendTo = "#mainList";
+        if(dateList[k] > new Date()) {
+            appendTo = "#nonLateSection";
+            todoList[k].className = "";
+        }
+        else if(dateList[k] < new Date()) {
+            appendTo = "#lateSection";
+            todoList[k].className = "lateText";
+        }
+
         $("<div />")
             .attr("id", `div${k}`)
             .addClass("checkboxDiv")
-            .appendTo("#mainList");
+            .appendTo(appendTo);
         $(`#div${k}`).append(todoList[k]);
         //div for the X button and done with task text
         $("<div />")
