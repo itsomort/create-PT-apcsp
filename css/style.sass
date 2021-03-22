@@ -1,0 +1,42 @@
+
+//fonts used in CSS:
+//jetbrains mono
+//nunito
+//bungeee
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=JetBrains+Mono&family=Nunito&display=swap')
+
+$text: #d1c5bc
+$background: #aeaeb5
+$button: #333333
+$black: #000
+
+%textFormat
+    color: $text
+
+
+html
+    font-family: 'Nunito', cursive
+    border-style: hidden
+
+.subheading, .heading 
+    font-weight: bold
+
+
+.formInput
+    border: hidden
+
+.listCheckbox
+    font-family: Bungee
+    display: inline
+
+.itemLabel
+    display: inline
+
+.taskText
+    display: inline
+    padding-left: 10px
+    &:hover
+        border-style: solid
+        border-color: $black

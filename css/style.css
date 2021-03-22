@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=JetBrains+Mono&family=Nunito&display=swap");
+.taskText, .itemLabel, .listCheckbox, .formInput, .formLabel, .button {
+  color: #d1c5bc;
+}
+
+html {
+  font-family: "Nunito", cursive;
+  background: #aeaeb5;
+  border-style: hidden;
+}
+
+.subheading, .heading {
+  font-weight: bold;
+}
+
+.button {
+  background-color: #333333;
+}
+
+.formLabel {
+  color: #000;
+}
+
+.formInput {
+  background-color: #333333;
+  border: hidden;
+}
+
+.listCheckbox {
+  font-family: Bungee;
+  display: inline;
+}
+
+.itemLabel {
+  display: inline;
+}
+
+.taskText {
+  display: inline;
+  padding-left: 10px;
+}
+.taskText:hover {
+  border-style: solid;
+  border-color: #000;
+}
+
+/*# sourceMappingURL=style.css.map */

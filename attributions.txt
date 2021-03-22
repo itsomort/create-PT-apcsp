@@ -1,0 +1,6 @@
+libraries:
+    pure css library
+    jquery library
+fonts:
+    jetbrains mono
+    nunito

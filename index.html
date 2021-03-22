@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create PT omar elbasri</title>
+    <link rel="stylesheet" href="node_modules/purecss/build/pure-min.css">
+    <link id="styles" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/extras/dropdown.css">
+    <link rel="stylesheet" href="css/themes/t2/t2.css"> <!-- this is a constant style in case the theme styling fails, also a default theme -->
+    <link rel="stylesheet" href="css/themes/t2/t2.css" id="theme">
+</head>
+
+<body>
+
+    <!-- scripts to load in -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script> <!-- jquery -->
+    <script src="js/helper/helper.js"></script> <!-- extra functions used in index.js -->
+    <script src="js/index.js"></script> <!-- main js file, has main functionality -->
+
+    <!-- dropdown menu for themes -->
+
+    <div class="themeMenu">
+        <button class="themeMenuButton pure-button">themes</button>
+        <div class="dropdown-content">
+            <a onclick="changeTheme(this)" id="t1">blue</a>
+            <a onclick="changeTheme(this)" id="t2">gray</a>
+            <a onclick="changeTheme(this)" id="t3">orange</a>
+        </div>
+    </div>
+
+
+    <!-- main website -->
+
+    <!-- these are the headings of the website -->
+    <h1 class="heading">TO DO list maker!</h1>
+    <h2 class="subheading">simply fill out the details in the boxes, then click the button and watch your item get added
+        to a list!</h2>
+
+    <!-- this is the form for inputting the date and task for the task -->
+    <form class="pure-form pure-form-aligned">
+        <label for="textOnLabel" class="formLabel">text on label:</label>
+        <input type="text" id="textOnLabel" name="textOnLabel" class="formInput"> <br>
+        <label for="dueDate" class="formLabel">due date:</label>
+        <input type="date" id="dueDate" name="dueDate" class="formInput">
+    </form>
+
+    <!-- button to add the task -->
+    <button onclick="addElement()" class="pure-button button" id="elementButton">add item</button>
+    
+    <!-- div element the list gets appended to -->
+    <div id="mainList" class='todoListMain'></div>
+</body>
+
+</html>

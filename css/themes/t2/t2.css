@@ -1,0 +1,21 @@
+.taskText, .itemLabel, .listCheckbox, .formInput, .formLabel, .button {
+  color: #d1c5bc;
+}
+
+html {
+  background: #aeaeb5;
+}
+
+.button {
+  background-color: #333333;
+}
+
+.formLabel {
+  color: #000;
+}
+
+.formInput {
+  background-color: #333333;
+}
+
+/*# sourceMappingURL=t2.css.map */

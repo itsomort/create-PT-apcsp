@@ -1,0 +1,33 @@
+
+
+$text: #a39e9e
+$background: #d95825
+$button: #b85027
+$black: #000
+
+%textFormat
+    color: $text
+
+
+html
+    background: $background
+.button
+    background-color: $button
+    @extend %textFormat
+
+.formLabel
+    @extend %textFormat
+    color: $black
+
+.formInput
+    @extend %textFormat
+    background-color: $button
+
+.listCheckbox
+    @extend %textFormat
+
+.itemLabel
+    @extend %textFormat
+
+.taskText
+    @extend %textFormat

@@ -1,0 +1,17 @@
+{
+  "name": "create-pt-final-project-omar-elbasri",
+  "version": "1.0.0",
+  "description": "ap cs final project omar elbasri",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "omar elbasri",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.5.5",
+    "jquery": "^3.6.0",
+    "purecss": "^2.0.5",
+    "sass": "^1.32.8"
+  }
+}
