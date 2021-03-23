@@ -1,0 +1,31 @@
+.themeMenuButton, .taskText, .itemLabel, .listCheckbox, .formInput, .formLabel, .button {
+  color: #d1c5bc;
+}
+
+html {
+  background: #aeaeb5;
+}
+
+.button {
+  background-color: #333333;
+}
+
+.formLabel {
+  color: #000;
+}
+
+.formInput {
+  background-color: #333333;
+}
+
+.themeMenuButton {
+  background-color: #333333;
+}
+
+.heading {
+  color: #000;
+}
+
+.subheading {
+  color: #000;
+}
