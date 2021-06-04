@@ -53,7 +53,7 @@ function initCheckbox(listItem) {
     let ret = listItem;
     let date = document.getElementById("dueDate").value;
     let dueDate = new Date(date);
-    ret.textContent = `task: ${document.getElementById("textOnLabel").value}|| due date: ${getDate(dueDate.toISOString())}`;
+    ret.textContent = `task: ${document.getElementById("textOnLabel").value} || due date: ${getDate(dueDate.toISOString())}`;
     ret.className = "todoListElement";
     todoList.push(listItem);
     dateList.push(dueDate);

@@ -45,7 +45,6 @@
     display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .themeMenu:hover .themeMenuButton {
     background-color: #ccc3c3;
 }

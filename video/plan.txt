@@ -1,4 +1,4 @@
-TODO: plan out video 
-TODO: record video
-TODO: edit video
-TODO: finish video
+DONE: plan out video 
+DONE: record video
+DONE: edit video
+DONE: finish video
